@@ -1,0 +1,1 @@
+# IA Multi‑Modelo – Demo v5\n\nStack elegido: **HTML + CSS + JS puro** para máxima compatibilidad en GitHub Pages.\n\nColoca tus modelos de Teachable Machine en `/public/models/...` o usa Modo demo.\n

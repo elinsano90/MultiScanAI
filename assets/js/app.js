@@ -1,0 +1,10 @@
+import { setTheme, setupTabs } from './core.js';
+import { ImageMode } from './modes/imageMode.js';
+import { AudioMode } from './modes/audioMode.js';
+import { PoseMode } from './modes/poseMode.js';
+document.getElementById('themeToggle').addEventListener('click',()=>setTheme());
+setupTabs();
+const imageMode = new ImageMode({ video:imgVideo, canvas:imgCanvas, startBtn:imgStart, freezeBtn:imgFreeze, resumeBtn:imgResume, uploadInput:imgUpload, lowFpsChk:imgLowFps, demoChk:imgDemo, top1El:imgTop1, top3El:imgTop3, latencyEl:imgLatency, statusDot:document.createElement('span'), statusLabel:document.createElement('span'), modelPath:'./public/models/classroom_objects/' });
+const audioMode = new AudioMode({ scope:audScope, spec:audSpec, recordBtn:audRecord, stopBtn:audStop, uploadInput:audUpload, sampleBtns:document.querySelectorAll('#audioPanel .sample'), demoChk:audDemo, top1El:audTop1, top3El:audTop3, latencyEl:audLatency, statusDot:document.createElement('span'), statusLabel:document.createElement('span'), modelPath:'./public/models/transport_sounds/' });
+const poseMode  = new PoseMode({ video:poseVideo, canvas:poseCanvas, startBtn:poseStart, demoChk:poseDemo, top1El:poseTop1, top3El:poseTop3, latencyEl:poseLatency, statusDot:document.createElement('span'), statusLabel:document.createElement('span'), modelPath:'./public/models/daily_actions/' });
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{ imageMode.pause(); audioMode.pause(); poseMode.pause(); }));

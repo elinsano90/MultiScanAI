@@ -1,0 +1,1 @@
+Coloca aquí tu modelo Teachable Machine (model.json, metadata.json, weights.bin).
